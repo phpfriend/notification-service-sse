@@ -5,7 +5,7 @@ const redis = require('redis');
 const app = express();
 app.use(cors());
 
-const redisClient = redis.createClient({ url: process.env.REDIS_URL });
+const redisClient = redis.createClient({ url: process.env.REDIS_PUBLIC_URL });
 redisClient.connect();
 
 app.get('/events', async (req, res) => {
