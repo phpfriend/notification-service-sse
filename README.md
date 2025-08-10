@@ -1,23 +1,16 @@
-# Notification Microservice (SSE + Redis)
+# Notification Service (SSE + Redis)
 
-This is a microservice for sending **real-time notifications** from PHP to the browser using **Server-Sent Events (SSE)** and Redis.
+A secure microservice for sending real-time notifications using Server-Sent Events (SSE) and Redis Pub/Sub.
 
-## Components
-- **server.js**: Node.js SSE server
-- **publisher.php**: PHP script to send notifications
-- **Redis**: Pub/Sub backend
+## 🚀 Deploy to Railway
+1. Sign up at https://railway.app and link your GitHub.
+2. Click "New Project" → "Deploy from GitHub".
+3. Select this repo.
+4. Create a Redis service in Railway, copy the connection URL.
+5. Add environment variables in Railway:
+   - REDIS_URL=<your_redis_url>
+   - SSE_PORT=3000
+6. Deploy and note your public URL (e.g., `https://your-app.up.railway.app/stream`).
 
-## Setup
-1. Install dependencies:
-   ```bash
-   npm install express cors redis
-   ```
-2. Start Redis server.
-3. Run `node server.js`.
-4. Use `publisher.php` in your PHP application to send messages.
-
-## Deployment
-You can deploy this to Railway, Render, or any VPS.
-
-## Security
-Use API keys or tokens to secure `/events` endpoint and Redis access.
+## 📜 License
+MIT
